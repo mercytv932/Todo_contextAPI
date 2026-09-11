@@ -1,9 +1,7 @@
 export interface Todo {
   id: number;
-  todoText: string;
+  text: string;
   completed: boolean;
 }
 
-export interface TodoContextType{
-  
-}
+export interface TodoContextType {}
