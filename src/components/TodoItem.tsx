@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TodoContext } from "../contexts/TodoContext";
 import type { Todo } from "../types";
 
 function TodoItem({ todo }: { todo: Todo }) {
   const context = useContext(TodoContext);
+
+  const [isEditigin, setIsEditing] = useState(false);
+  const [editText, setEditText] = useState(todo.text);
 
   if (!context) {
     throw new Error("TodoItem must  be used inside TodoProvider");
