@@ -5,7 +5,7 @@ import type { Todo } from "../types";
 function TodoItem({ todo }: { todo: Todo }) {
   const context = useContext(TodoContext);
 
-  const [isEditigin, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
 
   if (!context) {
@@ -13,6 +13,17 @@ function TodoItem({ todo }: { todo: Todo }) {
   }
 
   const { toggleTodo, deleteTodo, editTodo } = context;
+
+  function handleEdit() {
+    const text = editText.trim();
+
+    if (!text) {
+      return;
+    }
+
+    editTodo(todo.id, text);
+    setIsEditing(false);
+  }
 
   return (
     <div>
