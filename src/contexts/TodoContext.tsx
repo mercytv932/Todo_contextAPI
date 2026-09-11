@@ -19,5 +19,13 @@ function TodoProvider({ children }: { children: ReactNode }) {
     setTodos((prev) => [...prev, newTodo]);
   }
 
+  function deleteTodo(id: number) {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  }
+
+  function toggleTodo(id: number){
+    setTodos((prev)=> prev.map((todo)=> todo.id ===id ?{...todo, completed: ~todo.completed}))
+  }
+
   return <div></div>;
 }
