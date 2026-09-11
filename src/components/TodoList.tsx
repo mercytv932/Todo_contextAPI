@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { TodoContext } from "../contexts/TodoContext";
+import TodoItem from "./TodoItem";
 
 function TodoList() {
   const context = useContext(TodoContext);
@@ -13,7 +14,7 @@ function TodoList() {
   return (
     <div>
       {todos.map((todo) => (
-        <div key={todo.id}>{todo.text}</div>
+        <TodoItem key={todo.id} todo={todo} />
       ))}
     </div>
   );

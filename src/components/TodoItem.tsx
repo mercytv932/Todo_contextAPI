@@ -6,7 +6,7 @@ function TodoItem({ todo }: { todo: Todo }) {
   const context = useContext(TodoContext);
 
   if (!context) {
-    throw new Error("TodoItem mustr be used inside TodoProvider");
+    throw new Error("TodoItem must  be used inside TodoProvider");
   }
 
   const { toggleTodo, deleteTodo, editTodo } = context;
