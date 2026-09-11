@@ -6,7 +6,9 @@ function App() {
     <div>
       <TodoProvider>
         <FilterProvider>
-          <ThemeProvider></ThemeProvider>
+          <ThemeProvider>
+            <h1>Todo App</h1>
+          </ThemeProvider>
         </FilterProvider>
       </TodoProvider>
     </div>
