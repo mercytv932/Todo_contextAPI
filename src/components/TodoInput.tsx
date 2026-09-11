@@ -1,10 +1,9 @@
 import { useContext, useState } from "react";
 import { TodoContext } from "../contexts/TodoContext";
 
-const [input, setInput] = useState("");
-
 function TodoInput() {
   const context = useContext(TodoContext);
+  const [input, setInput] = useState("");
 
   if (!context) {
     throw new Error("TodoInput must be used inside TodoProvider");
@@ -35,3 +34,5 @@ function TodoInput() {
     </div>
   );
 }
+
+export default TodoInput;
